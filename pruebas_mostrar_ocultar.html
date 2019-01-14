@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+	<style>
+	.menu>li{display: inline; margin: 20px; cursor: pointer; padding: 15px}
+	 #experiencia{display: none}
+	.epigrafe{font-size: 20px}
+	.menu{
+	margin-bottom: 0;
+	}
+	
+	.epigrafe_seleccionado
+	{
+	background-color: rgb(210, 210, 210);
+	margin-top: -6px
+	}
+	.epigrafe_noseleccionado
+	{
+	background-color: rgb(235, 235, 235);
+	}
+	body
+	{
+	background-color: rgb(235, 235, 235);
+	}
+	</style>
+	<script>
+	function mostrarFormacion()
+	{
+	//Javascript debilmente tipado
+	//EditText et=findViewById(R.id.et_nombre);
+	var objeto_capa_formacion=document.getElementById("formacion");
+	objeto_capa_formacion.style="display: block;";
+	objeto_capa_formacion.className="epigrafe_seleccionado";
+	var objeto_capa_experiencia=document.getElementById("experiencia");
+	objeto_capa_experiencia.style="display: none;";
+	objeto_capa_experiencia.className="epigrafe_noseleccionado";
+	var obj_opcion_formacion=document.getElementById("opc_formacion");
+	obj_opcion_formacion.className="epigrafe_seleccionado";
+	var obj_opcion_experiencia=document.getElementById("opc_experiencia");
+	obj_opcion_experiencia.className="epigrafe_noseleccionado";
+	}
+	function mostrarExperiencia()
+	{
+	var objeto_capa_formacion=document.getElementById("formacion");
+	objeto_capa_formacion.style="display: none;";
+	objeto_capa_formacion.className="epigrafe_noseleccionado";
+	var objeto_capa_experiencia=document.getElementById("experiencia");
+	objeto_capa_experiencia.style="display: block;";
+	objeto_capa_experiencia.className="epigrafe_seleccionado";
+	var obj_opcion_formacion=document.getElementById("opc_formacion");
+	obj_opcion_formacion.className="epigrafe_noseleccionado";
+	var obj_opcion_experiencia=document.getElementById("opc_experiencia");
+	obj_opcion_experiencia.className="epigrafe_seleccionado";
+	}
+	</script>
+</head>
+<body>
+<div class="container">
+<div>
+<ul class="menu">
+	<li id="opc_formacion" onClick="mostrarFormacion();" class="epigrafe_seleccionado">FORMACIÓN</li>
+	<li id="opc_experiencia" onClick="mostrarExperiencia();">EXPERIENCIA</li>
+</ul>
+	<div id="formacion" class="epigrafe_seleccionado">
+		<p class="epigrafe">Formación</p>
+		<p class="texto">
+			<ol>
+				<li>Título de sueco nivel C4</li>
+				<li>Licenciatura en artes extravagantes</li>
+			</ol>
+		</p>
+	</div>
+	<div id="experiencia">
+		<p class="epigrafe">Experiencia</p>
+		<p class="texto">
+			<ol>
+				<li>2017-actual: Traductor de sueco</li>
+				<li>2016-2017: Guitarrista</li>
+			</ol>
+		</p>
+	</div>
+
+</div>
+</body>
+</html>
